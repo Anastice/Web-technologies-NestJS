@@ -1,2 +1,2 @@
-# Web-technologies-NestJS
- 
+# MusicApp by student from 405 group
+**Anastasiia Diadenko**
