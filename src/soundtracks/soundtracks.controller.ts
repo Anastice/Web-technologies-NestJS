@@ -5,7 +5,8 @@ import {  UpdateSoundtrackDto} from './dto/update-soundtrack.dto';
 @Controller('soundtracks')
 export class SoundtracksController {
    @Get()
-   //@Redirect
+   //@Redirect('https://nestjs.com', 301)
+
    findAll(): string {
       return 'This action returns all';
   }
