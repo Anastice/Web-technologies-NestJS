@@ -1,8 +1,9 @@
-import { CreateSoundtrackDto, UpdateSoundtrackDto, ListAllEntities } from './dto';
+import { CreateSoundtrackDto } from './dto/create-soundtrack.dto';
+import { UpdateSoundtrackDto } from './dto/update-soundtrack.dto';
 export declare class SoundtracksController {
-    create(createSoundtrackDto: CreateSoundtrackDto): string;
-    findAll(query: ListAllEntities): string;
+    findAll(): string;
     findOne(id: string): string;
-    update(id: string, updateSoundtrackDto: UpdateSoundtrackDto): string;
+    create(CreateSoundtrackDto: CreateSoundtrackDto): string;
     remove(id: string): string;
+    update(UpdateSoundtrackDto: UpdateSoundtrackDto, id: string): string;
 }
