@@ -16,21 +16,34 @@ exports.SoundtracksController = void 0;
 const common_1 = require("@nestjs/common");
 const create_soundtrack_dto_1 = require("./dto/create-soundtrack.dto");
 const update_soundtrack_dto_1 = require("./dto/update-soundtrack.dto");
+const http_exception_filter_1 = require("./http-exception.filter");
 let SoundtracksController = class SoundtracksController {
     findAll() {
         return 'This action returns all';
     }
-    findOne(id) {
-        return `This action returns a #${id} soundtrack`;
-    }
-    create(CreateSoundtrackDto) {
-        return `Title : ${CreateSoundtrackDto.title}`;
-    }
-    remove(id) {
-        return `Successfully removes a #${id} soundtrack`;
-    }
-    update(UpdateSoundtrackDto, id) {
-        return `Update + #${id}`;
+    async create(CreateSoundtrackDto) {
+        throw new common_1.ForbiddenException();
+        string;
+        {
+            return `Title : ${CreateSoundtrackDto.title}`;
+        }
+        findOne();
+        id: string;
+        string;
+        {
+            return `This action returns a #${id} soundtrack`;
+        }
+        remove();
+        id: string;
+        {
+            return `Successfully removes a #${id} soundtrack`;
+        }
+        update();
+        UpdateSoundtrackDto: update_soundtrack_dto_1.UpdateSoundtrackDto, ;
+        id: string;
+        {
+            return `Update + #${id}`;
+        }
     }
 };
 __decorate([
@@ -40,34 +53,13 @@ __decorate([
     __metadata("design:returntype", String)
 ], SoundtracksController.prototype, "findAll", null);
 __decorate([
-    (0, common_1.Get)(':id'),
-    __param(0, (0, common_1.Param)('id')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", String)
-], SoundtracksController.prototype, "findOne", null);
-__decorate([
     (0, common_1.Post)(),
+    (0, common_1.UseFilters)(new http_exception_filter_1.HttpExceptionFilter()),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_soundtrack_dto_1.CreateSoundtrackDto]),
-    __metadata("design:returntype", String)
+    __metadata("design:returntype", Promise)
 ], SoundtracksController.prototype, "create", null);
-__decorate([
-    (0, common_1.Delete)(':id'),
-    __param(0, (0, common_1.Param)('id')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", void 0)
-], SoundtracksController.prototype, "remove", null);
-__decorate([
-    (0, common_1.Put)(':id'),
-    __param(0, (0, common_1.Body)()),
-    __param(1, (0, common_1.Param)('id')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [update_soundtrack_dto_1.UpdateSoundtrackDto, String]),
-    __metadata("design:returntype", void 0)
-], SoundtracksController.prototype, "update", null);
 SoundtracksController = __decorate([
     (0, common_1.Controller)('soundtracks')
 ], SoundtracksController);
